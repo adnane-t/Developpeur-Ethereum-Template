@@ -43,6 +43,7 @@ I did try to set up the contract in a way so different session can be managed at
 
 
 Unfortunately I did not manage to make the calculation works so I haven't been able to make sure that the check of the vote is working propoerly.
+I haven' been able to sort it out on time but I suspect the issue to be linked to my object sessions that might not be well initialised when I call it for voting calculation registration.
 
 
 
