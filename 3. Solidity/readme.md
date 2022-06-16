@@ -48,6 +48,7 @@ I haven' been able to sort it out on time but I suspect the issue to be linked t
 ## EDIT 18/06/2022
 After an addtional devloppement session the contract is now fully oeprational.
 The issue of the previous version was indeed related to the session object. At the begining of a voting session, new session elements were note delcared.
+New version can be checked under Voting_V2.sol.
 
 
 
