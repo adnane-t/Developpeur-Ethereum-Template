@@ -106,6 +106,7 @@ contract Voting is Ownable {
     // ::::::::::::: STATE ::::::::::::: //
 
     modifier checkWorkflowStatus(uint  _num) {
+        require (_num != 0, "Not possible to get back to the original state");
         require (workflowStatus==WorkflowStatus(uint(_num)-1), "bad workflowstatus");
         require (_num != 5, "il faut lancer tally votes");
         _;
