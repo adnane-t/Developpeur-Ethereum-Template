@@ -56,6 +56,13 @@ contract Voting is Ownable {
     function getOneProposal(uint _id) external onlyVoters view returns (Proposal memory) {
         return proposalsArray[_id];
     }
+    //this getters have been added in order to perform some specific assertion style testing or 
+    function getAllProposals() external onlyVoters view returns (Proposal[] memory) {
+        return proposalsArray;
+    }
+    function getWinningProposalsID() external onlyVoters view returns (uint[] memory) {
+        return winningProposalsID;
+    }
 
  
     // ::::::::::::: REGISTRATION ::::::::::::: // 

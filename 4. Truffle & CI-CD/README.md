@@ -17,22 +17,59 @@ npm install @openzeppelin/test-helpers --save-dev
 Depending on your local settings you might need to update the truffle.congi.js file in order to et your environment variable matching the project config.
 
 ```bash
+ganache
+#Those commands need to be runed in a new terminal
 truffle migrate
 truffle test
 ```
 
+## Voting.sol file
+
+In order to devlope the test.js file I took the VotingPlus.sol file as a starting point.
+
+In order to close the gap between the two version I did add one fucntion :
+
+```JS
+function getWinningProposalsID() external onlyVoters view returns (uint[] memory) {
+  return winningProposalsID;
+  }
+```
+
+This allow to have a public access to the winning proposal ID, which is offered in the voting.sol file by the following varaible declaration :
+
+```
+contract Voting is Ownable {
+
+    uint public winningProposalID;
+    ...
+}
+```
+
+A second addition has been done :
+
+```JS
+function getAllProposals() external onlyVoters view returns (Proposal[] memory) {
+    return proposalsArray;
+}
+```
+
+It allows to try some extra assertion in the testing file.
+
 ## Test coverage
 
-Test have been organized with nested describe. Each describe focus on a specific state of the voting session.
-Hook before and after have been used to manage the configuration of the voting session in order to get revelant unit test without too much manipulation within the test functions.
+> Test have been organized with nested describe. Each describe focus on a specific state of the voting session.
+
+> Hook before() and after() have been used to manage the configuration of the voting session in order to get revelant unit test without too much manipulation within the test functions itself.
 
 ### Registration
 
-testing fucntions can be found under the following structure :
+testing functions can be found under the following structure :
 
 ```JS
-describe("registration", function () {...}
+describe("REGISTRATION", function () {...}
 ```
+
+#### List of test case
 
 - AddVoter test list
   - [x] Only Admin can add voters
@@ -45,6 +82,77 @@ describe("registration", function () {...}
   - [x] Only delete voter when voters registration is open
   - [x] delete a voter
 
+---
+
+### PROPOSAL
+
+testing functions can be found under the following structure :
+
+```JS
+describe("PROPOSAL", function () {...}
 ```
 
+#### List of test case
+
+- AddProposal test list
+  - [x] Only voters can add proposal
+  - [x] Proposal can't be empty
+  - [x] should emit event on addProposal
+  - [x] Can add a proposal
+
+---
+
+### VOTING
+
+testing functions can be found under the following structure :
+
+```JS
+describe("VOTING", function () {...}
 ```
+
+#### List of test case
+
+- Voting test list
+  - [x] Only voters can vote
+  - [x] Proposal has to exist
+  - [x] should emit event on setVote
+  - [x] Can vote
+
+---
+
+### STATUS
+
+testing functions can be found under the following structure :
+
+```JS
+describe("STATUS", function () {...}
+```
+
+#### List of test case
+
+- WorkflowStatus test list
+  - [x] Can't get back to initial status
+  - [x] Can't set inconsistent workflow status
+  - [x] Can't begin tally before reaching correct status
+  - [x] Only add voter when voters registration is open
+  - [x] Only add proposal when proposals registration is open
+
+---
+
+### TALLY
+
+testing functions can be found under the following structure :
+
+```JS
+describe("TALLY", function () {...}
+```
+
+#### List of test case
+
+- Tally test list
+  - [x] Only vote when voting session is open
+  - [x] Last status can't be set outside of tally functions
+  - [x] Only admin can tally vote
+  - [x] Tally vote
+
+---
