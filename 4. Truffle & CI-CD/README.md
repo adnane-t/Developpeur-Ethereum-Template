@@ -12,9 +12,11 @@ cd Developpeur-Ethereum-Template/4.\ Truffle\ \&\ CI-CD/
 ```bash
 npm install @openzeppelin/contracts --save-dev
 npm install @openzeppelin/test-helpers --save-dev
+npm install @truffle/hdwalletprovider --save-dev
+npm install --save-dev eth-gas-reporter
 ```
 
-Depending on your local settings you might need to update the truffle.congi.js file in order to et your environment variable matching the project config.
+Depending on your local settings you might need to update the truffle.congi.js file in order to let your environment variable matching the project config.
 
 ```bash
 ganache
@@ -156,3 +158,20 @@ describe("TALLY", function () {...}
   - [x] Tally vote
 
 ---
+
+### Result of eth-Gas-reporter
+
+| Solc version: 0.8.13+commit.abaa5c0e |                   | Optimizer enabled: false |         |  Runs: 200 | Block limit: 6718946 gas |           |
+| :----------------------------------- | :---------------- | :----------------------: | :-----: | ---------: | :----------------------: | :-------: |
+| Methods                              |                   |                          |         |
+|                                      |                   |                          |         |            |                          |
+| Contract                             | Method            |           Min            |   Max   |        Avg |         # calls          | eur (avg) |
+|                                      |                   |                          |         |            |                          |           |
+| Voting                               | addProposal       |          59758           |  76822  |      71134 |            3             |     -     |
+| Voting                               | addVoter          |            -             |    -    |      50196 |            9             |     -     |
+| Voting                               | deleteVoter       |            -             |    -    |      28231 |            3             |     -     |
+| Voting                               | setVote           |          60935           |  78035  |      65210 |            8             |     -     |
+| Voting                               | setWorkflowStatus |          31487           |  48587  |      36617 |            10            |     -     |
+| Voting                               | tallyDraw         |            -             |    -    |      83853 |            1             |     -     |
+| Deployments                          |                   |                          |         | % of limit |                          |
+| Voting                               | -                 |            -             | 2720822 |     40.5 % |            -             |
