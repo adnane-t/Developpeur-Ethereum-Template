@@ -31,14 +31,14 @@ function EthProvider({ children }) {
         fromBlock: 0,
       };
 
-      /*let listVotersEvent = await contract.getPastEvents(
+      let listVotersEvent = await contract.getPastEvents(
         "VoterRegistered",
         options
-      );*/
-      let listVotersEvent = [];
+      );
+      /*let listVotersEvent = []; /*
       contract.events
         .VoterRegistered(options1)
-        .on("data", (event) => listVotersEvent.push(event));
+        .on("data", (event) => listVotersEvent.push(event));*/
 
       //let listVoteEvent = await contract.getPastEvents("Voted", options);
       let listVoteEvent = [];
@@ -53,7 +53,6 @@ function EthProvider({ children }) {
       contract.events
         .WorkflowStatusChange(options1)
         .on("data", (event) => listWorkflowEvent.push(event));
-
       dispatch({
         type: actions.init,
         data: {
@@ -85,11 +84,43 @@ function EthProvider({ children }) {
     tryInit();
   }, [init]);
 
+  /* Currently not working raising error : Cannot read properties of null (reading 'getPastEvents') have to check why to fix the listener issue
+  //Issue related to new react unbox content
+  //Issue might be related to the way contract object is passed throught useEffect fucntion
+  
+  // Rendu initial du composant
+  useEffect(() => {
+    async function setUpEventListeners() {
+      let options1 = {
+        fromBlock: 0,
+      };
+
+      //event listener
+      state.contract.events
+        .VoterRegistered(options1)
+        .on("data", (event) => state.listVotersEvent.push(event));
+    }
+
+    // On doit executer la fonction async
+    setUpEventListeners();
+  }, [state, state.contract, state.listVotersEvent]);
+*/
+
   useEffect(() => {
     const events = ["chainChanged", "accountsChanged"];
     const handleChange = () => {
       init(state.artifact);
     };
+
+    window.ethereum.on("disconnect", function () {
+      alert("il faut se connecter");
+    });
+    window.ethereum.on("accountsChanged", function () {
+      window.location.reload();
+    });
+    window.ethereum.on("chainChanged", function () {
+      window.location.reload();
+    });
 
     events.forEach((e) => window.ethereum.on(e, handleChange));
     return () => {

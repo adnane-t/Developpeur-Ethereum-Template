@@ -1,6 +1,5 @@
 index.md
 client/node_modules/
-client/src/contracts
 client/package-lock-json
 truffle/.env
 truffle/node_modules/
