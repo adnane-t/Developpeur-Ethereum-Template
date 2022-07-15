@@ -32,23 +32,6 @@ function Ballot({ setValue }) {
     await contract.methods.setVote(valeur).send({ from: accounts[0] });
   };
 
-  const currentVotersBallot = (
-    <>
-      {storageProposal &&
-        storageProposal
-          .filter((item) => item.returnValues.voter === accounts[0])
-          .map((votersBallot) => {
-            console.log("BINGO");
-            return (
-              <p>
-                Poposal ID = {votersBallot.returnValues.proposalId}{" "}
-                TransactionHash = {votersBallot.transactionHash}
-              </p>
-            );
-          })}
-    </>
-  );
-
   return (
     <div>
       <details>
@@ -81,7 +64,20 @@ function Ballot({ setValue }) {
         ) ? (
           <div>
             <p>You have already voted</p>
-            {/*currentVotersBallot*/}
+            {listVoteEvent
+              .filter((item) => item.returnValues.voter === accounts[0])
+              .map((voterBallot) => (
+                <>
+                  <p>
+                    Your vote was registered for the proposal ID =
+                    <em>{voterBallot.returnValues.proposalId}</em>
+                  </p>
+                  <p>
+                    It has been recoreded through the transaction identified by
+                    the following hash = <em>{voterBallot.transactionHash}</em>
+                  </p>
+                </>
+              ))}
           </div>
         ) : (
           <div>
