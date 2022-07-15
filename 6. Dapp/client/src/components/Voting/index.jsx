@@ -6,6 +6,8 @@ import Voters from "./Voters";
 import Proposals from "./Proposals";
 import WorkflowStatus from "./WorkflowStatus";
 import Ballot from "./Ballot";
+import TallyVotes from "./TallyVotes";
+import VoteResult from "./VoteResult";
 //import Desc from "./Desc";
 import NoticeNoArtifact from "./NoticeNoArtifact";
 import NoticeWrongNetwork from "./NoticeWrongNetwork";
@@ -23,6 +25,7 @@ function Voting() {
       <Voters />
       <Proposals />
       <Ballot />
+      <VoteResult />
     </>
   );
 
@@ -36,7 +39,14 @@ function Voting() {
       ) : (
         Voting
       )}
-      {!isCurrentUserOwner ? <NoticeOnlyAdmin /> : <WorkflowStatus />}
+      {!isCurrentUserOwner ? (
+        <NoticeOnlyAdmin />
+      ) : (
+        <>
+          <TallyVotes />
+          <WorkflowStatus />
+        </>
+      )}
     </div>
   );
 }

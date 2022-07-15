@@ -22,8 +22,6 @@ function EthProvider({ children }) {
       }
       let contractOwner = await contract.methods.owner().call();
       const isCurrentUserOwner = contractOwner === accounts[0];
-      console.log("owner : " + contractOwner);
-      console.log("current : " + accounts[0]);
       // On recup tous les events passés du contrat
       let options = {
         fromBlock: 0,

@@ -6,16 +6,12 @@ function Ballot({ setValue }) {
     state: { contract, accounts, listVoteEvent },
   } = useEth();
   const [storageProposal, setStorageProposal] = useState(null);
-  console.log("storageProposal : " + storageProposal);
 
   const getAllProposals = async () => {
     await contract.methods
       .getAllProposals()
       .call({ from: accounts[0] })
-      .then((results) => {
-        setStorageProposal(results);
-        console.log(storageProposal);
-      })
+      .then((results) => setStorageProposal(results))
       .catch((err) => alert(err.message));
   };
 
@@ -35,9 +31,9 @@ function Ballot({ setValue }) {
   return (
     <div>
       <details>
-        <summary>getAllProposals</summary>
+        <summary>Vote</summary>
         <div>
-          <p>Allow voter registration by the owner of the contract</p>
+          <p>Display all the proposals</p>
           <button onClick={getAllProposals}>getAllProposals</button>
         </div>
         {storageProposal && (

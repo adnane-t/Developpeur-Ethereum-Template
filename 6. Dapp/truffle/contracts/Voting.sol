@@ -85,9 +85,11 @@ contract Voting is Ownable {
     }
     /**
      * @notice Getter of the winning proposal's id 
+     * @dev require added to make sure Winning proposal ID details will only be available once the vote is tallied
      * @return uint winningProposalsID array
      */ 
-    function getWinningProposalsID() external onlyVoters view returns (uint[] memory) {
+    function getWinningProposalsID() public view returns (uint[] memory) {
+        require(workflowStatus == WorkflowStatus.VotesTallied, "Current voting session has not ended yet");
         return winningProposalsID;
     }
 
