@@ -1,11 +1,26 @@
-//import { useState } from "react";
+//import { useEffect } from "react";
 import useEth from "../../contexts/EthContext/useEth";
 
 function WorkflowStatus({ setValue }) {
   const {
     state: { contract, accounts, listWorkflowEvent },
   } = useEth();
-  //const [storageValue, setStorageValue] = useState(null);
+
+  /*
+  * When uncomment switch import on line 1
+  * This useEffect is disabled as it doesn't update the rendering currently. Still have to check why but Const object contract and listVotersEvent are decalred through useEth and not useState it might be the root cause of this
+  *
+  useEffect(() => {
+    console.log("walk through useEffect");
+    let options1 = {
+      fromBlock: 0,
+    };
+    //event listener
+    contract.events
+        .WorkflowStatusChange(options1)
+        .on("data", (event) => listWorkflowEvent.push(event));
+  }, [contract.events, listWorkflowEvent]);
+  */
 
   const nextWorkflowStatus = async () => {
     console.log("NextWorkflowStatus");
