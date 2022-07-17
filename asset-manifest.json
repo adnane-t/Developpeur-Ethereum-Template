@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/css/main.5d94ea8f.chunk.css",
-    "main.js": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/main.6acf3a2e.chunk.js",
-    "main.js.map": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/main.6acf3a2e.chunk.js.map",
-    "runtime-main.js": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/runtime-main.fbbe4031.js",
-    "runtime-main.js.map": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/runtime-main.fbbe4031.js.map",
-    "static/js/2.2fcb2f88.chunk.js": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/2.2fcb2f88.chunk.js",
-    "static/js/2.2fcb2f88.chunk.js.map": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/2.2fcb2f88.chunk.js.map",
-    "index.html": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/index.html",
-    "static/css/main.5d94ea8f.chunk.css.map": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/css/main.5d94ea8f.chunk.css.map",
-    "static/js/2.2fcb2f88.chunk.js.LICENSE.txt": "/adnane-t/Developpeur-Ethereum-Template/tree/main/6.%20Dapp/static/js/2.2fcb2f88.chunk.js.LICENSE.txt"
+    "main.css": "/adnane-t/Developpeur-Ethereum-Template/static/css/main.5d94ea8f.chunk.css",
+    "main.js": "/adnane-t/Developpeur-Ethereum-Template/static/js/main.6acf3a2e.chunk.js",
+    "main.js.map": "/adnane-t/Developpeur-Ethereum-Template/static/js/main.6acf3a2e.chunk.js.map",
+    "runtime-main.js": "/adnane-t/Developpeur-Ethereum-Template/static/js/runtime-main.06452d71.js",
+    "runtime-main.js.map": "/adnane-t/Developpeur-Ethereum-Template/static/js/runtime-main.06452d71.js.map",
+    "static/js/2.c5f88025.chunk.js": "/adnane-t/Developpeur-Ethereum-Template/static/js/2.c5f88025.chunk.js",
+    "static/js/2.c5f88025.chunk.js.map": "/adnane-t/Developpeur-Ethereum-Template/static/js/2.c5f88025.chunk.js.map",
+    "index.html": "/adnane-t/Developpeur-Ethereum-Template/index.html",
+    "static/css/main.5d94ea8f.chunk.css.map": "/adnane-t/Developpeur-Ethereum-Template/static/css/main.5d94ea8f.chunk.css.map",
+    "static/js/2.c5f88025.chunk.js.LICENSE.txt": "/adnane-t/Developpeur-Ethereum-Template/static/js/2.c5f88025.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fbbe4031.js",
-    "static/js/2.2fcb2f88.chunk.js",
+    "static/js/runtime-main.06452d71.js",
+    "static/js/2.c5f88025.chunk.js",
     "static/css/main.5d94ea8f.chunk.css",
     "static/js/main.6acf3a2e.chunk.js"
   ]
