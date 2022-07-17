@@ -35,7 +35,7 @@ function WorkflowStatus({ setValue }) {
       <details>
         <summary>WorkflowStatus</summary>
         <div>
-          <p>Allow voter registration by the owner of the contract</p>
+          <p>Move to the next workflow status</p>
           <button onClick={nextWorkflowStatus}>
             Switch to the new workflow status
           </button>

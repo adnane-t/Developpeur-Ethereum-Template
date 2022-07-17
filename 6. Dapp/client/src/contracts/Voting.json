@@ -24429,10 +24429,16 @@
       "links": {},
       "address": "0x54D9852c20bD2Dff4F071338cE7B14C1AFC9f48F",
       "transactionHash": "0x946e03521e2a1c28841e06abb592ae978da262446498340dbdb1c39e6ec06b98"
+    },
+    "1658058540018": {
+      "events": {},
+      "links": {},
+      "address": "0x30130710081783f64235445DB464520ED412e35B",
+      "transactionHash": "0x7f291a2e3ba2bc2086f257bba021ecbdea85baaf21307707c4a769b6ad92c6d6"
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-07-15T19:56:17.899Z",
+  "updatedAt": "2022-07-17T11:49:53.720Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Alyra teamAdnane Tabaï",

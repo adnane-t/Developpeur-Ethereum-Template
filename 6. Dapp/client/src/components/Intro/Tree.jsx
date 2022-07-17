@@ -6,12 +6,13 @@ function Tree() {
       <span className="primary-color">
         {`   # React project (create-react-app)\n`}
       </span>
-      {`├    └── src`}
-      <span className="third-color">
-        {`   # React project (create-react-app)\n`}
-      </span>
-      {`├         ├── componenents`}
+      {`├    └── src\n`}
+      {`├         ├── componenents\n`}
       <span className="third-color">{`   # React components\n`}</span>
+      {`├         ├     ├──componenents`}
+      <span className="third-color">{`   # Actual Front part of the dapp\n`}</span>
+      {`├         ├     └──...`}
+      <span className="third-color">{`   # Default components\n`}</span>
       {`├         ├── contexts/ETHContext`}
       <span className="third-color">
         {`   # React context and web3 initiator\n`}

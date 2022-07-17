@@ -27,32 +27,25 @@ function EthProvider({ children }) {
         fromBlock: 0,
         toBlock: "latest",
       };
-      let options1 = {
-        fromBlock: 0,
-      };
 
       let listVotersEvent = await contract.getPastEvents(
         "VoterRegistered",
         options
       );
-      /*let listVotersEvent = []; /*
-      contract.events
-        .VoterRegistered(options1)
-        .on("data", (event) => listVotersEvent.push(event));*/
 
-      //let listVoteEvent = await contract.getPastEvents("Voted", options);
-      let listVoteEvent = [];
+      let listVoteEvent = await contract.getPastEvents("Voted", options);
+      /*let listVoteEvent = [];
       contract.events
         .Voted(options1)
-        .on("data", (event) => listVoteEvent.push(event));
+        .on("data", (event) => listVoteEvent.push(event));*/
 
       let listWorkflowEvent = await contract.getPastEvents(
         "WorkflowStatusChange",
         options
       );
-      contract.events
+      /*contract.events
         .WorkflowStatusChange(options1)
-        .on("data", (event) => listWorkflowEvent.push(event));
+        .on("data", (event) => listWorkflowEvent.push(event));*/
       dispatch({
         type: actions.init,
         data: {
@@ -83,28 +76,6 @@ function EthProvider({ children }) {
 
     tryInit();
   }, [init]);
-
-  /* Currently not working raising error : Cannot read properties of null (reading 'getPastEvents') have to check why to fix the listener issue
-  //Issue related to new react unbox content
-  //Issue might be related to the way contract object is passed throught useEffect fucntion
-  
-  // Rendu initial du composant
-  useEffect(() => {
-    async function setUpEventListeners() {
-      let options1 = {
-        fromBlock: 0,
-      };
-
-      //event listener
-      state.contract.events
-        .VoterRegistered(options1)
-        .on("data", (event) => state.listVotersEvent.push(event));
-    }
-
-    // On doit executer la fonction async
-    setUpEventListeners();
-  }, [state, state.contract, state.listVotersEvent]);
-*/
 
   useEffect(() => {
     const events = ["chainChanged", "accountsChanged"];
