@@ -11,6 +11,8 @@ https://github.com/adnane-t/VotingDappProject
 Demo video :
 https://www.loom.com/share/9413b2810dd9405cb24f267cde936832
 
+**_(la video dure 15 min en partie a cause des temps de latence du testnet ropsten en la visionnant en 2X elle dure un peu plude 5 minutes)_**
+
 ## Voting.sol file
 
 In order to devlope the Dapp I took the VotingPlus.sol file used for the project 2 as a starting point.
