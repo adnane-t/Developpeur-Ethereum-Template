@@ -5,6 +5,9 @@
 Github Pages web site :
 https://adnane-t.github.io/VotingDappProject/
 
+Git repo used for publication :
+https://github.com/adnane-t/VotingDappProject
+
 Demo video :
 https://www.loom.com/share/9413b2810dd9405cb24f267cde936832
 
