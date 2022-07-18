@@ -1,5 +1,13 @@
 # Voting dapp based on React Truffle Box
 
+## Expected links :
+
+Github Pages web site :
+https://adnane-t.github.io/VotingDappProject/
+
+Demo video :
+https://www.loom.com/share/9413b2810dd9405cb24f267cde936832
+
 ## Voting.sol file
 
 In order to devlope the Dapp I took the VotingPlus.sol file used for the project 2 as a starting point.
